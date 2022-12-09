@@ -8,7 +8,7 @@ export default function Restaurant({ user }: { user: User | null }) {
   useEffect(() => {
     console.log(params.id)
 
-    RestaurantDataService.get(String(params.id)).then((data) => {
+    RestaurantDataService.get(String(params.id)).then((data: any) => {
       console.log(data.data)
       setRestaurant(data.data)
     })

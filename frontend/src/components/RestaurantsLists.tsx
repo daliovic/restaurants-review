@@ -6,14 +6,14 @@ export default function RestaurantsLists() {
   const [cuisines, setCuisines] = useState<string[]>([])
   const [restaurants, setRestaurants] = useState<Restaurant[]>([])
   const getAllRestaurants = () => {
-    RestaurantDataService.getAll().then((data) => {
-    //   console.log(data.data.restaurants)
+    RestaurantDataService.getAll().then((data: any) => {
+      //   console.log(data.data.restaurants)
       setRestaurants(data.data.restaurants)
     })
   }
 
   const getAllCuisines = () => {
-    RestaurantDataService.getCuisines('').then((data) => setCuisines(data.data))
+    RestaurantDataService.getCuisines('').then((data: any) => setCuisines(data.data))
   }
 
   useEffect(() => {
@@ -22,9 +22,9 @@ export default function RestaurantsLists() {
   }, [])
   return (
     <div className='row row-cols-1 row-cols-md-3 g-4'>
-        {restaurants.map((item, i) => {
-          return <RestaurantsListCard item={item} index={i} key={`restaurant${item._id}`} />
-        })}
+      {restaurants.map((item, i) => {
+        return <RestaurantsListCard item={item} index={i} key={`restaurant${item._id}`} />
+      })}
     </div>
   )
 }
