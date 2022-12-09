@@ -1,1 +1,13 @@
-GET http://127.0.0.1:5000/api/v1/restaurants?name=Gitane
+GET http://127.0.0.1:5000/api/v1/restaurants/id/5eb3d668b31de5d588f4292a
+
+###
+
+POST http://127.0.0.1:5000/api/v1/restaurants/review
+Content-Type: application/json
+
+{
+    "restaurant_id" : "5eb3d668b31de5d588f4292b",
+    "text" : "Good Food!",
+    "user_id": "1234",
+    "name": "Daly"
+}
